@@ -5,7 +5,11 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform tank;
-
+    void Awake()
+    {
+        if (tank == null)
+            Debug.LogWarning("Tank property in CameraFollow is null/empty");
+    }
     void LateUpdate()
     {
         if (tank != null)
