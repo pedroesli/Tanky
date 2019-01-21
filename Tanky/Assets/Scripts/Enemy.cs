@@ -10,9 +10,8 @@ public class Enemy : MonoBehaviour
     public float speed;
     public float life;
     public float stopTime;
-
     public float timeBetweenHits = 0.5f;
-    public float timer = 0;
+    public float enemyHitTimer = 0;
 
     private bool hit = false;
     private float hitTimer = 0f;
@@ -23,6 +22,9 @@ public class Enemy : MonoBehaviour
     }
     void Update()
     {
+        //timer for hits
+        enemyHitTimer += Time.deltaTime;
+
         if (!hit && tank!=null)
             transform.position = Vector2.MoveTowards(transform.position, tank.position, speed * Time.deltaTime);
         else
@@ -50,11 +52,10 @@ public class Enemy : MonoBehaviour
     }
     void OnCollisionStay2D(Collision2D collision)
     {
-        timer += Time.deltaTime;
-        if (collision.gameObject.CompareTag("Player") && timer>=timeBetweenHits)
+        if (collision.gameObject.CompareTag("Player") && enemyHitTimer>=timeBetweenHits)
         {
             collision.gameObject.GetComponent<Tank>().life -= damage;
-            timer = 0;
+            enemyHitTimer = 0;
         }
     }
 }

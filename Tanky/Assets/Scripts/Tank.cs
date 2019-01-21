@@ -11,6 +11,7 @@ public class Tank : MonoBehaviour
         if (life <= 0)
         {
             // DEAD X_X
+            MusicManager.instance.Play("Explosion");
             Destroy(gameObject);
         }
     }

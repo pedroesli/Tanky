@@ -240,6 +240,12 @@ MonoBehaviour:
     pitch: 1
     spatialBlend: 0
     source: {fileID: 0}
+  - name: Explosion
+    clip: {fileID: 8300000, guid: 1ffae4a3d8ba86441ad6906750575648, type: 3}
+    volume: 0.77
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
 --- !u!1 &134088492
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,7 +770,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 14
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
