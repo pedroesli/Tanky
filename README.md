@@ -6,3 +6,4 @@ How to play:
 - Dash: SPACE
 - Shoot: Left mouse click
 
+Try and survive waves of enemys
