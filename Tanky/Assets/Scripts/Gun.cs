@@ -32,7 +32,8 @@ public class Gun : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Mouse0) && timer >= fireTime)
         {
-            MusicManager.instance.Play("Cannon");
+            if(!PauseMenu.GameIsPaused)
+                MusicManager.instance.Play("Cannon");
             Instantiate(bullet,transform.position,tank.transform.rotation);
             timer = 0f;
         }
