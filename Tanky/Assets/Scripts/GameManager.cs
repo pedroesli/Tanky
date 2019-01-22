@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
+        print(level);
+        if (level == 1)
+            MusicManager.instance.Play("Mechanical_noise");
         ApplySettings();
     }
 

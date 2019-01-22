@@ -83,7 +83,6 @@ public class OptionMenu : MonoBehaviour
     {
         float masterVolume;
         MusicManager.instance.audioMixer.GetFloat("MasterVolume", out masterVolume);
-        print(masterVolume);
         volumeSlider.value = masterVolume;
     }
 }
