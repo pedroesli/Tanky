@@ -16,9 +16,9 @@ public class Audio
     [HideInInspector]
     public AudioSource source;
 
-    public void Configure(GameObject musicManager)
+    public void Configure(AudioSource audioSource)
     {
-        source = musicManager.AddComponent<AudioSource>();
+        source = audioSource;
         source.clip = clip;
         source.volume = volume;
         source.pitch = pitch;

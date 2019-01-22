@@ -206,7 +206,7 @@ public class Camera2DFilters : MonoBehaviour
         GUILayout.EndArea();
     }
 
-    void Start()
+    public void Start()
     {
         InternalResolution = new Vector2(Mathf.RoundToInt(((float)InternalVerticalResolution / (float)Screen.height)* (float)Screen.width), InternalVerticalResolution);
         if (InternalResolution.x % 2 != 0)
