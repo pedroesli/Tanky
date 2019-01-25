@@ -7,6 +7,7 @@ public class OptionMenu : MonoBehaviour
 {
     public Dropdown resolutionDropdown;
     public Slider volumeSlider;
+    public Dropdown filterDropdown;
     private Resolution[] resolutions;
 
     void Start()
@@ -14,6 +15,8 @@ public class OptionMenu : MonoBehaviour
         SetupResollutionDropdown();
 
         SetupVolumeSlider();
+
+        SetupFilterDropdown();
     }
 
     public void SetQuality(int qualityIndex)
@@ -84,5 +87,13 @@ public class OptionMenu : MonoBehaviour
         float masterVolume;
         MusicManager.instance.audioMixer.GetFloat("MasterVolume", out masterVolume);
         volumeSlider.value = masterVolume;
+    }
+    private void SetupFilterDropdown()
+    {
+        filterDropdown.value = GameManager.instance.filterIndex;
+    }
+    public void SetMasterVolume(float volume)
+    {
+        MusicManager.instance.audioMixer.SetFloat("MasterVolume", volume);
     }
 }

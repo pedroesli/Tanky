@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using System;
+using TMPro;
+
 public class GameManager : MonoBehaviour
 {
-    
+
     public static GameManager instance;
     [HideInInspector]
-    public int filterIndex;
+    public int filterIndex = 1;
 
     void Awake()
     {
@@ -21,15 +20,18 @@ public class GameManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
-        filterIndex = 1;
+        
     }
 
     private void OnLevelWasLoaded(int level)
     {
-        print(level);
         if (level == 1)
+        {
             MusicManager.instance.Play("Mechanical_noise");
+        }
+            
         ApplySettings();
+        
     }
 
     private void ApplySettings()

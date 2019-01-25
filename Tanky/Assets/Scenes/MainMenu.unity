@@ -1760,6 +1760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resolutionDropdown: {fileID: 1107948361}
   volumeSlider: {fileID: 1321874266}
+  filterDropdown: {fileID: 353136138}
 --- !u!4 &539062141
 Transform:
   m_ObjectHideFlags: 0
@@ -1915,25 +1916,55 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Menu_move
     clip: {fileID: 8300000, guid: 9809aaab24f1e5348896e01d0863f6d3, type: 3}
-    volume: 0.77
+    volume: 1
     pitch: 1
     spatialBlend: 0
     source: {fileID: 0}
   - name: Menu_select
     clip: {fileID: 8300000, guid: 7dfd5a7faebcdd34c90e1508f96112fd, type: 3}
-    volume: 0.77
+    volume: 1
     pitch: 1
     spatialBlend: 0
     source: {fileID: 0}
   - name: Pause_in
     clip: {fileID: 8300000, guid: 758dad2a5e765054f9400b3fd93f9267, type: 3}
-    volume: 0.77
+    volume: 1
     pitch: 1
     spatialBlend: 0
     source: {fileID: 0}
   - name: Pause_out
     clip: {fileID: 8300000, guid: 9a80015dec6dcd64e95508522b887e35, type: 3}
-    volume: 0.77
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: Mechanical_noise
+    clip: {fileID: 8300000, guid: b7cbbfbfa19d9014f9f5c24ae3ded08d, type: 3}
+    volume: 0.8
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: Lazer
+    clip: {fileID: 8300000, guid: 06962dae7a39a3b439bdcaa7d4ac0f20, type: 3}
+    volume: 0.5
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: Impact_2
+    clip: {fileID: 8300000, guid: 980d5fb402de94e499da2f4fccf8c4e4, type: 3}
+    volume: 0.5
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: Power_on
+    clip: {fileID: 8300000, guid: 6569726093ae186448b8c8f16eea7e4f, type: 3}
+    volume: 0.5
+    pitch: 3
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: Shutdown
+    clip: {fileID: 8300000, guid: c70a137f448368945989678c39896f36, type: 3}
+    volume: 0.5
     pitch: 1
     spatialBlend: 0
     source: {fileID: 0}
@@ -3969,13 +4000,13 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 0
+  m_MaxValue: 5
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 573078558}
+      - m_Target: {fileID: 539062140}
         m_MethodName: SetMasterVolume
         m_Mode: 0
         m_Arguments:
@@ -6235,7 +6266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 617431b53d179e34a8abb19bb621b77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filterIndex: 0
+  filterIndex: 1
 --- !u!1 &2115599134
 GameObject:
   m_ObjectHideFlags: 0

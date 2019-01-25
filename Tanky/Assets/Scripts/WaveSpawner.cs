@@ -37,7 +37,7 @@ public class WaveSpawner : MonoBehaviour
     public Wave wave;
     public int maxEnemysAllowed;
     public float timeBetweenSpawns;
-    public GameObject enemy;
+    public GameObject[] enemys;
     public Transform[] spawnPoints;
     public static WaveSpawner instance = null;
     private float spawnDelayCountdown = 3f;
@@ -102,6 +102,7 @@ public class WaveSpawner : MonoBehaviour
     private void SpawnEnemy()
     {
         int randomPoint = Random.Range(0, spawnPoints.Length);
-        Instantiate(enemy, spawnPoints[randomPoint].position, Quaternion.identity);
+        int randomEnemy = Random.Range(0, enemys.Length);
+        Instantiate(enemys[randomEnemy], spawnPoints[randomPoint].position, Quaternion.identity);
     }
 }

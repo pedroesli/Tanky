@@ -36,8 +36,4 @@ public class MusicManager : MonoBehaviour
         else
             Debug.LogWarning("Did not find " + name + " in audio array");
     }
-    public void SetMasterVolume(float volume)
-    {
-        audioMixer.SetFloat("MasterVolume", volume);
-    }
 }

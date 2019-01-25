@@ -21,10 +21,19 @@ public class Bullet : MonoBehaviour
         }
         else if (collision.CompareTag("Enemy"))
         {
-            MusicManager.instance.Play("Hit_1");
-            collision.GetComponent<Enemy>().Hit(damage);
-            collision.GetComponent<Rigidbody2D>().AddTorque(bulletTorque, ForceMode2D.Impulse);
-            Destroy(gameObject);
+            if (collision.gameObject.name.Equals("Enemy(Clone)"))
+            {
+                MusicManager.instance.Play("Hit_1");
+                collision.GetComponent<Enemy>().Hit(damage);
+                collision.GetComponent<Rigidbody2D>().AddTorque(bulletTorque, ForceMode2D.Impulse);
+                Destroy(gameObject);
+            }
+            else
+            {
+                MusicManager.instance.Play("Hit_1");
+                collision.GetComponent<Enemy2>().life -= damage;
+                Destroy(gameObject);
+            }
         }
     }
 

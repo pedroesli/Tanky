@@ -10,8 +10,10 @@ public class Gun : MonoBehaviour
     public float fireTime;
     private Vector3 mousePosition;
     private float timer = 0f;
+    private float savedFireTime;
     void Start()
     {
+        savedFireTime = fireTime;
     }
 
     void Update()
@@ -41,5 +43,17 @@ public class Gun : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
+    }
+    //Methodfor berserker ability
+    public void ShootAbility(float fireTimeDecrement)
+    {
+        //save and modify firing time
+        savedFireTime = fireTime;
+        fireTime -= fireTimeDecrement;
+
+    }
+    public void ShootNormal()
+    {
+        fireTime = savedFireTime;
     }
 }

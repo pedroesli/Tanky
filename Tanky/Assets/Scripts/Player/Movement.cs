@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     private float dashTime;
     private int direction;
-
+    private float savedSpeed;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -102,5 +102,16 @@ public class Movement : MonoBehaviour
     public bool IsDashing()
     {
         return dashTime != startDashTime ? true : false;
+    }
+
+    //Beserk ability
+    public void MovementAbility(float movementSpeedIncreasment)
+    {
+        savedSpeed = speed;
+        speed += movementSpeedIncreasment;
+    }
+    public void NormalMovement()
+    {
+        speed = savedSpeed;
     }
 }
